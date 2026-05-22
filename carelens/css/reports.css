@@ -1,3 +1,7 @@
+/* ====================================================
+   CareLens AI - Reports View Styles
+   ==================================================== */
+
 .report-grid {
   display: grid;
   grid-template-columns: 1.1fr 0.9fr;
@@ -12,25 +16,40 @@
 }
 
 .upload-dropzone {
-  border: 2px dashed rgba(255, 255, 255, 0.16);
-  border-radius: 28px;
-  padding: 42px;
+  border: 2.5px dashed var(--primary);
+  border-radius: var(--radius-lg);
+  padding: 48px 24px;
   text-align: center;
-  color: var(--muted);
-  transition: border-color 0.25s ease, background 0.25s ease;
+  color: var(--text-main);
+  background: rgba(79, 172, 254, 0.03);
+  cursor: pointer;
+  transition: var(--transition);
+  box-shadow: inset 0 0 12px rgba(79, 172, 254, 0.02);
 }
 
 .upload-dropzone:hover {
-  border-color: var(--cyan);
-  background: rgba(56, 189, 248, 0.08);
+  border-color: var(--secondary);
+  background: rgba(79, 172, 254, 0.08);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-sm), inset 0 0 20px rgba(79, 172, 254, 0.05);
+}
+
+.upload-dropzone.drag-over {
+  border-color: var(--secondary);
+  background: rgba(79, 172, 254, 0.12);
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: var(--shadow-md), 0 0 25px rgba(79, 172, 254, 0.2), inset 0 0 20px rgba(79, 172, 254, 0.08);
 }
 
 .ocr-preview {
-  min-height: 260px;
-  border-radius: 24px;
-  background: rgba(255, 255, 255, 0.04);
+  min-height: 200px;
+  border-radius: var(--radius-md);
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
   padding: 24px;
-  margin-top: 20px;
+  color: var(--text-soft);
+  font-size: 0.95rem;
+  line-height: 1.6;
 }
 
 .analysis-grid {
@@ -40,15 +59,22 @@
 
 .analysis-grid h4 {
   margin-top: 0;
+  color: var(--text-main);
+  font-size: 1.1rem;
 }
 
 .analysis-grid pre {
   margin: 0;
   white-space: pre-wrap;
   word-break: break-word;
-  background: rgba(255, 255, 255, 0.05);
-  border-radius: 18px;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
   padding: 18px;
+  font-family: 'Inter', monospace;
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  line-height: 1.7;
 }
 
 .category-row {

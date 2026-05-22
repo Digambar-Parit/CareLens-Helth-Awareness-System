@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CareLens AI • Register</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- AOS -->
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="../css/global-theme.css" />
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="../css/auth.css" />
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body>
+
+  <!-- FLOATING GRADIENT ORBS -->
+  <div class="floating-circle" style="width:340px;height:340px;top:-120px;left:-120px;background:rgba(79,172,254,0.16);"></div>
+  <div class="floating-circle" style="width:260px;height:260px;bottom:-60px;right:-90px;background:rgba(123,97,255,0.14);"></div>
+
+  <!-- NAVBAR -->
+  <nav>
+    <div class="navbar">
+      <div class="logo">
+        <i data-lucide="heart-pulse"></i>
+        CareLens AI
+      </div>
+
+      <div class="nav-links">
+        <a href="../index.html">Home</a>
+        <a href="../dashboard.html">Dashboard</a>
+        <a href="../detection.html">Detection</a>
+        <a href="../reports.html">Reports</a>
+        <a href="../reminders.html">Reminders</a>
+        <a href="../history.html">History</a>
+      </div>
+
+      <div class="nav-actions">
+        <a href="register.html">
+          <button class="btn-secondary" style="padding:10px 20px;">Get Started</button>
+        </a>
+        <a href="login.html">
+          <button class="btn-primary" style="padding:10px 20px;">Login</button>
+        </a>
+        <button class="menu-toggle" data-menu-toggle aria-label="Toggle Navigation">
+          <i data-lucide="menu"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Dropdown Navigation -->
+    <div class="mobile-menu" data-mobile-menu>
+      <div class="mobile-menu-links">
+        <a href="../index.html">Home</a>
+        <a href="../dashboard.html">Dashboard</a>
+        <a href="../detection.html">Detection</a>
+        <a href="../reports.html">Reports</a>
+        <a href="../reminders.html">Reminders</a>
+        <a href="../history.html">History</a>
+        <a href="register.html" class="active">Get Started</a>
+        <a href="login.html">Login</a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="auth-shell">
+    <div class="auth-layout">
+      
+      <!-- LEFT: TRUST & ILLUSTRATION -->
+      <section class="auth-hero" data-aos="fade-right">
+        <div class="brand-row">
+          <div class="brand-mark" aria-hidden="true">
+            <i data-lucide="sparkles"></i>
+          </div>
+          <div>
+            <h1>Join calm, safe, AI-powered care</h1>
+            <p>
+              Create your CareLens account to unlock disease detection guidance,
+              report intelligence, emergency support, and medication reminders.
+            </p>
+          </div>
+        </div>
+
+        <div class="auth-points">
+          <div class="auth-point">
+            <div class="icon">
+              <i data-lucide="shield-check"></i>
+            </div>
+            <div>
+              <h4>Privacy by design</h4>
+              <p>Built for complete patient data confidentiality and security.</p>
+            </div>
+          </div>
+
+          <div class="auth-point">
+            <div class="icon">
+              <i data-lucide="activity"></i>
+            </div>
+            <div>
+              <h4>Wellness momentum</h4>
+              <p>Track hydration, sleep cycles, and daily mindfulness indicators.</p>
+            </div>
+          </div>
+
+          <div class="auth-point">
+            <div class="icon">
+              <i data-lucide="scale"></i>
+            </div>
+            <div>
+              <h4>Clear AI explanations</h4>
+              <p>Health alerts and risk evaluations displayed with readability.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="auth-illustration" aria-hidden="true">
+          <!-- Healthcare illustration (inline SVG) -->
+          <svg viewBox="0 0 800 420" preserveAspectRatio="none" style="width:100%; height:100%;">
+            <defs>
+              <linearGradient id="rgA" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0" stop-color="rgba(79,172,254,0.35)"/>
+                <stop offset="1" stop-color="rgba(0,242,254,0.2)"/>
+              </linearGradient>
+              <linearGradient id="rgB" x1="0" y1="1" x2="1" y2="0">
+                <stop offset="0" stop-color="rgba(123,97,255,0.3)"/>
+                <stop offset="1" stop-color="rgba(139,92,246,0.15)"/>
+              </linearGradient>
+            </defs>
+
+            <rect width="800" height="420" fill="transparent"/>
+            <circle cx="220" cy="200" r="110" fill="url(#rgA)"></circle>
+            <circle cx="600" cy="180" r="105" fill="url(#rgB)"></circle>
+            
+            <!-- Soft heartbeat cross waves -->
+            <path d="M 120 220 Q 260 320 400 220 T 680 220" stroke="rgba(123,97,255,0.35)" stroke-width="4" fill="none" stroke-linecap="round"/>
+            <path d="M 120 230 Q 260 290 400 230 T 680 230" stroke="rgba(79,172,254,0.2)" stroke-width="2" fill="none" stroke-linecap="round"/>
+          </svg>
+        </div>
+      </section>
+
+      <!-- RIGHT: FORM -->
+      <section class="auth-card glass-card form-enter" data-aos="fade-left">
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:20px;">
+          <div>
+            <h2>Create account</h2>
+            <p class="sub" style="margin-bottom:0;">Start your premium healthcare journey.</p>
+          </div>
+          <div class="status-pill" style="white-space:nowrap; border-color:var(--primary); color:var(--primary);">
+            <i data-lucide="sparkles" style="width:14px;height:14px;"></i>
+            AI Care
+          </div>
+        </div>
+
+        <form class="form" onsubmit="event.preventDefault(); alert('Register UI demo — connect to backend later.');">
+          <div class="field">
+            <label for="fullName">Full name</label>
+            <input id="fullName" type="text" placeholder="e.g., Amara Reid" required />
+          </div>
+
+          <div class="field">
+            <label for="email">Email</label>
+            <input id="email" type="email" placeholder="you@example.com" required />
+          </div>
+
+          <div class="field">
+            <label for="password">Password</label>
+            <input id="password" type="password" placeholder="Create a secure password" required />
+          </div>
+
+          <div class="field">
+            <label for="careGoal">Primary goal</label>
+            <input id="careGoal" type="text" placeholder="e.g., Disease prevention, reminder tracking..." />
+          </div>
+
+          <div class="auth-actions">
+            <label class="checkbox">
+              <input type="checkbox" checked />
+              I agree to the privacy policy
+            </label>
+          </div>
+
+          <div style="margin-top:10px;">
+            <button class="btn btn-primary" type="submit" style="width:100%;">
+              <i data-lucide="user-plus" style="width:18px;height:18px;"></i>
+              Create Account
+            </button>
+          </div>
+        </form>
+
+        <div class="social-divider">
+          <span>or sign up with</span>
+        </div>
+
+        <div class="social-row">
+          <button class="social-btn" type="button" onclick="alert('Google social signup UI demo');">
+            <i data-lucide="log-in" style="width:18px;height:18px; color:#ea4335;"></i>
+            Google
+          </button>
+          <button class="social-btn" type="button" onclick="alert('Apple social signup UI demo');">
+            <i data-lucide="apple" style="width:18px;height:18px; color:#000000;"></i>
+            Apple
+          </button>
+        </div>
+
+        <div class="auth-footer">
+          Already have an account?
+          <a href="login.html">Sign in</a>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <!-- CHATBOT -->
+  <button data-chat-toggle class="ai-chat-btn" aria-label="Toggle AI Companion">
+    <i data-lucide="message-circle"></i>
+  </button>
+
+  <div class="ai-chat-panel" data-chat-panel>
+    <div class="ai-chat-header">
+      <div>
+        <h3>CareLens Assistant</h3>
+        <p>Your calm AI health companion</p>
+      </div>
+      <div class="live-dot"></div>
+    </div>
+    
+    <div class="ai-chat-messages">
+      <div class="ai-bubble assistant">
+        Hello! Need help setting up your profile or primary healthcare goals?
+      </div>
+      <div class="ai-bubble assistant">
+        I can guide you step-by-step.
+      </div>
+    </div>
+
+    <div class="ai-chat-input">
+      <input type="text" placeholder="Type a message..." aria-label="Chat input"/>
+      <button aria-label="Send message"><i data-lucide="send"></i></button>
+    </div>
+  </div>
+
+  <!-- SCRIPTS -->
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script src="../js/app.js"></script>
+
+  <script>
+    AOS.init({ duration: 900, once: true });
+    if (window.lucide) lucide.createIcons();
+  </script>
+</body>
+</html>

@@ -1,78 +1,98 @@
+/* ====================================================
+   CareLens AI - Disease Detection Toolkit Styles
+   ==================================================== */
+
 .detection-grid {
   display: grid;
-  grid-template-columns: 1.45fr 1fr;
+  grid-template-columns: 1.4fr 1fr;
   gap: 28px;
   margin-top: 28px;
 }
 
 .chip-panel {
-  padding: 24px;
-  display: inline-grid;
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   gap: 16px;
 }
 
+/* Meter Styles */
 .severity-meter {
   width: 100%;
-  border-radius: 999px;
-  background: rgba(255, 255, 255, 0.08);
-  height: 16px;
-  overflow: hidden;
-  margin: 18px 0 8px;
+  margin: 8px 0;
 }
 
-.severity-meter span {
-  display: block;
+.meter-track {
+  width: 100%;
+  height: 12px;
+  background: rgba(79, 172, 254, 0.12);
+  border-radius: var(--radius-full);
+  overflow: hidden;
+}
+
+.meter-fill {
   height: 100%;
-  border-radius: 999px;
-  background: linear-gradient(90deg, var(--blue), var(--purple));
+  border-radius: var(--radius-full);
+  background: linear-gradient(90deg, var(--primary), var(--secondary));
+  width: 20%;
+  transition: width 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.meter-label {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
+#severitySummary {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--primary);
+  margin-top: 8px;
 }
 
 .chips {
   display: flex;
   flex-wrap: wrap;
-  gap: 12px;
-  margin-top: 18px;
-}
-
-.chip-btn {
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  background: rgba(255, 255, 255, 0.04);
-  border-radius: 999px;
-  padding: 12px 18px;
-  color: var(--text);
-  transition: transform 0.25s ease, background 0.25s ease;
-}
-
-.chip-btn.active,
-.chip-btn:hover {
-  background: rgba(0, 212, 255, 0.16);
-  transform: translateY(-2px);
+  gap: 10px;
+  margin-top: 16px;
 }
 
 .analysis-panel {
   padding: 28px;
 }
 
+.analysis-content {
+  margin-top: 16px;
+}
+
 .analysis-content ul {
   list-style: none;
   padding: 0;
-  margin: 18px 0 0;
+  margin: 16px 0 0;
   display: grid;
   gap: 12px;
 }
 
 .analysis-content li {
-  padding-left: 20px;
+  padding-left: 24px;
   position: relative;
+  font-size: 0.95rem;
+  color: var(--text-muted);
 }
 
-.analysis-content li:before {
-  content: '•';
+.analysis-content li::before {
+  content: '✓';
   position: absolute;
   left: 0;
-  color: var(--cyan);
+  color: var(--success);
+  font-weight: 700;
 }
 
+/* Camera Assisted Card */
 .camera-card,
 .upload-card,
 .typing-card {
@@ -80,74 +100,128 @@
 }
 
 .camera-sim {
+  margin: 20px 0;
+  background: var(--bg-secondary);
+  border-radius: var(--radius-md);
+  padding: 24px;
   display: grid;
   place-items: center;
-  padding: 36px;
-  background: rgba(255, 255, 255, 0.04);
-  border-radius: 24px;
-  text-align: center;
+  border: 1px solid var(--border-color);
 }
 
 .camera-frame {
-  display: inline-grid;
-  place-items: center;
-  gap: 14px;
-  width: 160px;
-  height: 160px;
-  border-radius: 24px;
-  background: rgba(15, 23, 42, 0.86);
+  width: 100%;
+  max-width: 280px;
+  height: 180px;
+  background: #0f172a;
+  border-radius: var(--radius-sm);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: var(--bg-white);
+  gap: 12px;
+  box-shadow: var(--shadow-md);
+  position: relative;
+  overflow: hidden;
+}
+
+.camera-scan-line {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, transparent, var(--accent), transparent);
+  box-shadow: 0 0 10px var(--accent);
+  animation: scan 2s linear infinite;
+  display: none;
+}
+
+@keyframes scan {
+  0% { top: 0%; }
+  50% { top: 100%; }
+  100% { top: 0%; }
 }
 
 .upload-zone {
-  border: 2px dashed rgba(255, 255, 255, 0.16);
-  border-radius: 24px;
+  border: 2px dashed rgba(79, 172, 254, 0.25);
+  background: rgba(255, 255, 255, 0.4);
+  border-radius: var(--radius-md);
   padding: 32px;
   text-align: center;
   cursor: pointer;
+  transition: var(--transition);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  color: var(--text-soft);
+}
+
+.upload-zone:hover {
+  background: rgba(79, 172, 254, 0.05);
+  border-color: var(--primary);
+  color: var(--primary);
 }
 
 .upload-preview {
-  margin-top: 18px;
-  padding: 18px;
-  border-radius: 20px;
-  background: rgba(255, 255, 255, 0.04);
-  min-height: 72px;
+  margin-top: 16px;
+  padding: 12px 18px;
+  border-radius: var(--radius-sm);
+  background: var(--bg-white);
+  border: 1px solid var(--border-color);
+  font-size: 0.9rem;
+  color: var(--text-muted);
 }
 
-.typing-card .chat-log {
-  display: grid;
-  gap: 14px;
+/* Chat Log Bubbles in Detection Page */
+.chat-log {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 16px;
 }
 
 .bubble {
-  padding: 18px 20px;
-  border-radius: 24px;
-  background: rgba(255, 255, 255, 0.06);
-  position: relative;
-}
-
-.bubble.user {
-  background: rgba(56, 189, 248, 0.12);
-  margin-left: auto;
+  max-width: 80%;
+  padding: 12px 16px;
+  border-radius: var(--radius-md);
+  font-size: 0.95rem;
+  line-height: 1.5;
 }
 
 .bubble.assistant {
-  background: rgba(255, 255, 255, 0.05);
+  background: var(--bg-white);
+  border: 1px solid var(--border-color);
+  align-self: flex-start;
+  border-top-left-radius: 4px;
+  color: var(--text-main);
+}
+
+.bubble.user {
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  color: var(--bg-white);
+  align-self: flex-end;
+  border-top-right-radius: 4px;
 }
 
 .bubble.typing {
-  width: 120px;
-  display: flex;
-  justify-content: space-between;
+  display: inline-flex;
+  gap: 4px;
+  padding: 12px 16px;
   align-items: center;
+  justify-content: center;
+  width: auto;
+  align-self: flex-start;
 }
 
 .bubble.typing span {
-  width: 12px;
-  height: 12px;
+  width: 8px;
+  height: 8px;
+  background: var(--text-soft);
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.5);
-  animation: pulse 1.2s infinite ease-in-out;
+  animation: pulse-dots 1.2s infinite ease-in-out;
 }
 
 .bubble.typing span:nth-child(2) {
@@ -158,75 +232,9 @@
   animation-delay: 0.4s;
 }
 
-@keyframes pulse {
-  0%, 100% { opacity: 0.5; transform: translateY(0); }
+@keyframes pulse-dots {
+  0%, 100% { opacity: 0.3; transform: translateY(0); }
   50% { opacity: 1; transform: translateY(-3px); }
-}
-
-/* Chatbot Input Styles */
-.chatbot-input-container {
-  width: 100%;
-}
-
-.chatbot-input-wrapper {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  padding: 12px 16px;
-  background: rgba(255, 255, 255, 0.06);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  border-radius: 28px;
-  transition: all 0.3s ease;
-}
-
-.chatbot-input-wrapper:focus-within {
-  background: rgba(255, 255, 255, 0.08);
-  border-color: rgba(0, 212, 255, 0.4);
-  box-shadow: 0 0 20px rgba(0, 212, 255, 0.1);
-}
-
-.chatbot-input {
-  flex: 1;
-  background: transparent;
-  border: none;
-  outline: none;
-  color: var(--text);
-  font-size: 16px;
-  font-family: inherit;
-  padding: 8px 0;
-}
-
-.chatbot-input::placeholder {
-  color: rgba(255, 255, 255, 0.4);
-}
-
-.chatbot-submit-btn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
-  background: linear-gradient(135deg, var(--cyan), var(--blue));
-  border: none;
-  color: white;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  flex-shrink: 0;
-}
-
-.chatbot-submit-btn:hover {
-  transform: scale(1.1);
-  box-shadow: 0 0 20px rgba(0, 212, 255, 0.4);
-}
-
-.chatbot-submit-btn:active {
-  transform: scale(0.95);
-}
-
-.chatbot-submit-btn [data-lucide] {
-  width: 18px;
-  height: 18px;
 }
 
 @media (max-width: 960px) {

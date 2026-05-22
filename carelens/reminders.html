@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <link rel="stylesheet" href="css/global-theme.css">
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>CareLens Reminders</title>
@@ -10,20 +11,45 @@
 </head>
 <body>
   <nav>
-    <div class="navbar container">
-      <a href="index.html" class="logo btn secondary-btn">CareLens</a>
+    <div class="navbar">
+      <div class="logo">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-heart-pulse" style="color: var(--primary);"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/><path d="M3.22 12H9.5l1.5-3 2 6 1.5-3h3.16"/></svg>
+        CareLens AI
+      </div>
+
       <div class="nav-links">
+        <a href="index.html">Home</a>
         <a href="dashboard.html">Dashboard</a>
         <a href="detection.html">Detection</a>
-        <a href="reminders.html">Reminders</a>
         <a href="reports.html">Reports</a>
+        <a href="reminders.html" class="active">Reminders</a>
+        <a href="history.html">History</a>
       </div>
-      <div class="flex gap-3">
-        <a href="history.html" class="btn secondary-btn">History</a>
-        <a href="emergency.html" class="btn">SOS</a>
+
+      <div class="nav-actions">
+        <a href="nearby.html" class="btn-secondary" style="padding: 10px 20px;">Nearby</a>
+        <a href="emergency.html" class="btn" style="padding: 10px 20px;">SOS</a>
       </div>
+
+      <button class="menu-toggle" data-menu-toggle aria-label="Toggle Navigation">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-menu"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
+      </button>
     </div>
   </nav>
+
+  <!-- MOBILE MENU OVERLAY -->
+  <div class="mobile-menu" data-mobile-menu>
+    <div class="mobile-menu-links">
+      <a href="index.html">Home</a>
+      <a href="dashboard.html">Dashboard</a>
+      <a href="detection.html">Detection</a>
+      <a href="reports.html">Reports</a>
+      <a href="reminders.html" class="active">Reminders</a>
+      <a href="history.html">History</a>
+      <a href="nearby.html">Nearby</a>
+      <a href="emergency.html">SOS</a>
+    </div>
+  </div>
 
   <main>
     <section class="container" data-aos="fade-up">
@@ -36,7 +62,7 @@
         <div class="glass-card reminder-panel">
           <div class="widget-header flex-between">
             <h3>Today’s medicine plan</h3>
-            <button class="btn">Add reminder</button>
+            <button class="btn" id="addReminderBtn">Add reminder</button>
           </div>
           <div class="medicine-cards">
             <div class="medicine-card">
@@ -120,6 +146,37 @@
       <p>CareLens Medication Planner • Keep your schedule seamless.</p>
     </div>
   </footer>
+
+  <!-- CHATBOT -->
+  <button data-chat-toggle class="ai-chat-btn" aria-label="Toggle AI Companion">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-message-circle"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg>
+  </button>
+
+  <div class="ai-chat-panel" data-chat-panel>
+    <div class="ai-chat-header">
+      <div>
+        <h3>CareLens Assistant</h3>
+        <p>Your calm AI health companion</p>
+      </div>
+      <div class="live-dot"></div>
+    </div>
+    
+    <div class="ai-chat-messages">
+      <div class="ai-bubble assistant">
+        Hi 👋 I can help you with disease detection, medication reminders, or reports parsing.
+      </div>
+      <div class="ai-bubble assistant">
+        Feel free to ask me anything about your wellness profile.
+      </div>
+    </div>
+
+    <div class="ai-chat-input">
+      <input type="text" placeholder="Type a message..." aria-label="Chat input"/>
+      <button aria-label="Send message">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-send"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></svg>
+      </button>
+    </div>
+  </div>
 
   <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
   <script src="https://unpkg.com/lucide@latest/dist/lucide.min.js"></script>

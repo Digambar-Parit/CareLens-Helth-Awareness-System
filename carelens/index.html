@@ -1,214 +1,508 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>CareLens AI</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@500;600;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
-  <link rel="stylesheet" href="css/style.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>CareLens AI</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- AOS -->
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/global-theme.css">
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
 </head>
+
 <body>
-  <nav>
-    <div class="navbar container">
-      <a href="index.html" class="logo flex" aria-label="CareLens Home">
-        <span class="btn secondary-btn">CareLens</span>
-      </a>
-      <div class="nav-links">
-        <a href="index.html">Home</a>
-        <a href="dashboard.html">Dashboard</a>
-        <a href="detection.html">Detection</a>
-        <a href="reminders.html">Reminders</a>
-        <a href="reports.html">Reports</a>
-      </div>
-      <div class="flex gap-3">
-        <a href="nearby.html" class="btn secondary-btn">Nearby</a>
-        <a href="emergency.html" class="btn">SOS</a>
-      </div>
+
+    <!-- FLOATING BACKGROUND -->
+
+    <div class="floating-circle"
+        style="
+        width: 340px;
+        height: 340px;
+        top: -100px;
+        left: -100px;
+        background: rgba(79,172,254,0.18);
+    ">
     </div>
-  </nav>
 
-  <main>
-    <section class="container" style="position: relative; overflow: hidden;">
-      <div class="floating-circle" style="width: 320px; height: 320px; top: -80px; right: -80px; background: rgba(0, 212, 255, 0.18);"></div>
-      <div class="floating-circle" style="width: 220px; height: 220px; bottom: 20px; left: -60px; background: rgba(124, 58, 237, 0.18);"></div>
+    <div class="floating-circle"
+        style="
+        width: 260px;
+        height: 260px;
+        bottom: 0;
+        right: -80px;
+        background: rgba(123,97,255,0.18);
+    ">
+    </div>
 
-      <div class="grid grid-2" style="align-items: center; gap: 48px;">
+    <!-- NAVBAR -->
+    <nav>
+        <div class="navbar">
+            <div class="logo">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-heart-pulse" style="color: var(--primary);"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/><path d="M3.22 12H9.5l1.5-3 2 6 1.5-3h3.16"/></svg>
+                CareLens AI
+            </div>
+
+            <div class="nav-links">
+                <a href="index.html" class="active">Home</a>
+                <a href="dashboard.html">Dashboard</a>
+                <a href="detection.html">Detection</a>
+                <a href="reports.html">Reports</a>
+                <a href="reminders.html">Reminders</a>
+                <a href="history.html">History</a>
+            </div>
+
+            <div class="nav-actions">
+                <a href="login.html" class="btn-secondary" style="padding: 10px 20px;">Login</a>
+                <a href="register.html" class="btn-primary" style="padding: 10px 20px;">Get Started</a>
+            </div>
+
+            <button class="menu-toggle" data-menu-toggle aria-label="Toggle Navigation">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-menu"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
+            </button>
+        </div>
+    </nav>
+
+    <!-- MOBILE MENU OVERLAY -->
+    <div class="mobile-menu" data-mobile-menu>
+        <div class="mobile-menu-links">
+            <a href="index.html" class="active">Home</a>
+            <a href="dashboard.html">Dashboard</a>
+            <a href="detection.html">Detection</a>
+            <a href="reports.html">Reports</a>
+            <a href="reminders.html">Reminders</a>
+            <a href="history.html">History</a>
+            <a href="login.html">Login</a>
+            <a href="register.html">Get Started</a>
+        </div>
+    </div>
+
+    <!-- HERO -->
+
+    <section class="section hero-section">
+
+        <div class="hero-layout">
+
+            <!-- LEFT -->
+
+            <div data-aos="fade-right">
+
+                <div class="hero-badge">
+                    ✨ AI Healthcare Reimagined
+                </div>
+
+                <h1 class="title">
+                    Detect Early.<br>
+                    Prevent Smarter.
+                </h1>
+
+                <p class="lead">
+                    CareLens AI combines disease prediction,
+                    AI-powered health analysis,
+                    emergency healthcare support,
+                    and smart medical tracking
+                    into one futuristic patient experience.
+                </p>
+
+                <div class="hero-buttons">
+
+                    <a href="dashboard.html">
+                        <button class="btn-primary">
+                            Explore Dashboard
+                        </button>
+                    </a>
+
+                    <a href="detection.html">
+                        <button class="btn-secondary">
+                            Start Detection
+                        </button>
+                    </a>
+
+                </div>
+
+                <!-- STATS -->
+
+                <div class="grid-3 hero-stats">
+
+                    <div class="glass-card floating-card"
+                        style="padding:24px;"
+                        data-aos="zoom-in">
+
+                        <p class="section-subtitle">
+                            AI Prediction
+                        </p>
+
+                        <h3>94%</h3>
+
+                    </div>
+
+                    <div class="glass-card floating-card"
+                        style="padding:24px;"
+                        data-aos="zoom-in"
+                        data-aos-delay="100">
+
+                        <p class="section-subtitle">
+                            Active Patients
+                        </p>
+
+                        <h3>12.9k+</h3>
+
+                    </div>
+
+                    <div class="glass-card floating-card"
+                        style="padding:24px;"
+                        data-aos="zoom-in"
+                        data-aos-delay="200">
+
+                        <p class="section-subtitle">
+                            Smart Monitoring
+                        </p>
+
+                        <h3>24/7</h3>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- RIGHT -->
+
+            <div class="hero-right"
+                data-aos="fade-left">
+
+                <div class="glass-card ai-dashboard">
+
+                    <div class="flex-between">
+
+                        <div>
+
+                            <p class="section-subtitle">
+                                CareLens AI Assistant
+                            </p>
+
+                            <h2>
+                                Health Overview
+                            </h2>
+
+                        </div>
+
+                        <div class="live-dot"></div>
+
+                    </div>
+
+                    <!-- SCORE -->
+
+                    <div class="glass-card ai-mini-card">
+
+                        <div class="flex-between">
+
+                            <div>
+
+                                <p class="section-subtitle">
+                                    Health Score
+                                </p>
+
+                                <h1>84%</h1>
+
+                            </div>
+
+                            <button class="btn-secondary">
+                                Healthy
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                    <!-- INSIGHT -->
+
+                    <div class="glass-card ai-mini-card">
+
+                        <div class="flex-between">
+
+                            <div>
+
+                                <p class="section-subtitle">
+                                    AI Insight
+                                </p>
+
+                                <h3>
+                                    Early fatigue detected
+                                </h3>
+
+                            </div>
+
+                            <i data-lucide="brain"></i>
+
+                        </div>
+
+                    </div>
+
+                    <!-- MEDICAL IMAGE -->
+                    <img
+                        src="assets/health_ai_dashboard.png"
+                        alt="Healthcare Visualization"
+                        style="
+                        width:100%;
+                        margin-top:24px;
+                        border-radius:28px;
+                        box-shadow:0 20px 60px rgba(0,0,0,0.12);
+                    "
+                    >
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- FEATURES -->
+
+    <section class="section">
+
         <div data-aos="fade-up">
-          <p class="section-title" style="color: var(--cyan);">AI Healthcare Reimagined</p>
-          <h1 class="title">Detect Early. Prevent Smarter.</h1>
-          <p class="lead">AI-powered preventive healthcare assistant for early disease detection, medical record management, and health awareness.</p>
-          <div style="display: flex; flex-wrap: wrap; gap: 16px; margin-top: 28px;">
-            <a href="dashboard.html" class="btn">Get Started</a>
-            <a href="reports.html" class="btn secondary-btn">Explore Dashboard</a>
-          </div>
 
-          <div class="grid grid-3" style="margin-top: 42px;">
-            <div class="card floating-card" data-aos="zoom-in" data-aos-delay="120">
-              <p class="section-subtitle">Instant AI screening</p>
-              <h3>Smart symptom scan</h3>
-            </div>
-            <div class="card floating-card" data-aos="zoom-in" data-aos-delay="220">
-              <p class="section-subtitle">Connected health</p>
-              <h3>Digital wellness journal</h3>
-            </div>
-            <div class="card floating-card" data-aos="zoom-in" data-aos-delay="320">
-              <p class="section-subtitle">Emergency readiness</p>
-              <h3>Live location alerts</h3>
-            </div>
-          </div>
+            <h2 class="section-title">
+                Smart Healthcare Features
+            </h2>
+
+            <p class="section-subtitle">
+                Advanced AI-powered healthcare tools
+                for early disease detection,
+                emergency support,
+                and wellness monitoring.
+            </p>
+
         </div>
 
-        <div data-aos="fade-left" style="position: relative;">
-          <div class="glass-card" style="padding: 44px; position: relative; overflow: hidden;">
-            <div style="position: absolute; top: -24px; right: -24px; width: 120px; height: 120px; background: rgba(255,255,255,0.09); border-radius: 50%;"></div>
-            <div style="position: absolute; bottom: -24px; left: -24px; width: 90px; height: 90px; background: rgba(56, 189, 248, 0.16); border-radius: 50%;"></div>
-            <h2 class="page-heading">CareLens AI Assistant</h2>
-            <p class="lead">A futuristic dashboard of personalized risk scores, live readings, and preventive AI suggestions.</p>
-            <div style="margin-top: 30px; display: grid; gap: 18px;">
-              <div class="glass-card" style="padding: 18px; border-radius: 24px;">
-                <div class="flex-between" style="gap: 14px;">
-                  <div>
-                    <p class="section-subtitle">Health Score</p>
-                    <h3>84%</h3>
-                  </div>
-                  <span class="btn secondary-btn">Live</span>
-                </div>
-              </div>
-              <div class="glass-card" style="padding: 18px; border-radius: 24px;">
-                <div class="flex-between" style="gap: 14px;">
-                  <div>
-                    <p class="section-subtitle">AI Insights</p>
-                    <h3>Early risk detected</h3>
-                  </div>
-                  <span class="btn secondary-btn">Review</span>
-                </div>
-              </div>
+        <div class="grid-3"
+            style="margin-top:42px;">
+
+            <div class="glass-card floating-card"
+                style="padding:32px;"
+                data-aos="fade-up">
+
+                <i data-lucide="activity"></i>
+
+                <h3 style="margin-top:18px;">
+                    AI Disease Detection
+                </h3>
+
+                <p class="lead">
+                    Analyze symptoms and receive
+                    intelligent health predictions instantly.
+                </p>
+
             </div>
-          </div>
+
+            <div class="glass-card floating-card"
+                style="padding:32px;"
+                data-aos="fade-up"
+                data-aos-delay="100">
+
+                <i data-lucide="camera"></i>
+
+                <h3 style="margin-top:18px;">
+                    Camera Detection
+                </h3>
+
+                <p class="lead">
+                    Smart webcam-based healthcare
+                    analysis and fatigue monitoring.
+                </p>
+
+            </div>
+
+            <div class="glass-card floating-card"
+                style="padding:32px;"
+                data-aos="fade-up"
+                data-aos-delay="200">
+
+                <i data-lucide="pill"></i>
+
+                <h3 style="margin-top:18px;">
+                    Medicine Reminder
+                </h3>
+
+                <p class="lead">
+                    Stay consistent with
+                    AI-powered medicine scheduling
+                    and reminder tracking.
+                </p>
+
+            </div>
+
         </div>
-      </div>
+
     </section>
 
-    <section class="container" data-aos="fade-up">
-      <div class="flex-between" style="margin-bottom: 32px;">
-        <div>
-          <p class="section-title">Next-gen healthcare tools</p>
-          <p class="section-subtitle">Designed for fast screening, actionable recommendations, and hospital-grade monitoring.</p>
+    <!-- TESTIMONIALS -->
+
+    <section class="section">
+
+        <div data-aos="fade-up">
+
+            <h2 class="section-title">
+                Trusted By Modern Clinics
+            </h2>
+
+            <p class="section-subtitle">
+                Healthcare professionals trust
+                CareLens AI for smarter preventive healthcare.
+            </p>
+
         </div>
-      </div>
-      <div class="grid grid-4" style="gap: 20px;">
-        <div class="card">
-          <h4>Predictive analytics</h4>
-          <p class="lead">Advance alerts for early symptom detection and trending conditions.</p>
+
+        <div class="grid-3"
+            style="margin-top:40px;">
+
+            <div class="glass-card"
+                style="padding:30px;">
+
+                <p class="lead">
+                    “CareLens helped our patients
+                    stay proactive about their health.”
+                </p>
+
+                <h4 style="margin-top:20px;">
+                    Dr. Maya Chen
+                </h4>
+
+            </div>
+
+            <div class="glass-card"
+                style="padding:30px;">
+
+                <p class="lead">
+                    “The UI feels premium and the
+                    AI recommendations are excellent.”
+                </p>
+
+                <h4 style="margin-top:20px;">
+                    Alex Rivera
+                </h4>
+
+            </div>
+
+            <div class="glass-card"
+                style="padding:30px;">
+
+                <p class="lead">
+                    “The emergency and reminder
+                    system improves patient engagement.”
+                </p>
+
+                <h4 style="margin-top:20px;">
+                    Priya Joshi
+                </h4>
+
+            </div>
+
         </div>
-        <div class="card">
-          <h4>Secure patient files</h4>
-          <p class="lead">Encrypted medical records stored in one responsive health hub.</p>
-        </div>
-        <div class="card">
-          <h4>Medication planner</h4>
-          <p class="lead">Smart reminders and schedule tracking for daily care routines.</p>
-        </div>
-        <div class="card">
-          <h4>Emergency support</h4>
-          <p class="lead">Instant SOS routing to hospitals, clinics, and contacts.</p>
-        </div>
-      </div>
+
     </section>
 
-    <section class="container" data-aos="fade-up">
-      <div class="glass-card" style="padding: 42px;">
-        <div class="grid grid-3" style="align-items: center; gap: 24px;">
-          <div>
-            <p class="section-title">360° monitoring in one platform</p>
-            <p class="section-subtitle">Powerful analytics, patient education, and AI-driven diagnostics fused into the CareLens experience.</p>
-          </div>
-          <div class="card" style="padding: 28px;">
-            <p class="section-subtitle">Active users</p>
-            <h3>12.9k+</h3>
-          </div>
-          <div class="card" style="padding: 28px;">
-            <p class="section-subtitle">AI accuracy</p>
-            <h3>94%</h3>
-          </div>
+    <!-- CTA -->
+
+    <section class="section">
+
+        <div class="glass-card"
+            style="
+            padding:60px;
+            text-align:center;
+        "
+            data-aos="zoom-in">
+
+            <h2 class="section-title">
+                Start Your Smart Health Journey
+            </h2>
+
+            <p class="section-subtitle">
+                AI-powered healthcare assistance
+                designed for modern preventive care.
+            </p>
+
+            <div style="margin-top:30px;">
+
+                <a href="register.html">
+
+                    <button class="btn-primary">
+                        Create Account
+                    </button>
+
+                </a>
+
+            </div>
+
         </div>
-      </div>
+
     </section>
 
-    <section class="container" data-aos="fade-up">
-      <div class="section-title">Trusted by modern clinics</div>
-      <div class="grid grid-3" style="margin-top: 32px; gap: 22px;">
-        <div class="card">
-          <p class="lead">"CareLens helped us detect anomalies faster and keep patients engaged with preventive care."</p>
-          <div class="flex-between" style="margin-top: 24px;">
+    <!-- FOOTER -->
+
+    <footer
+        style="
+        margin-top:80px;
+        padding:40px;
+        text-align:center;
+    ">
+
+        <h3>CareLens AI</h3>
+
+        <p class="section-subtitle">
+            AI-Powered Preventive Healthcare Platform
+        </p>
+
+    </footer>
+
+    <!-- AI CHAT BUTTON -->
+    <button data-chat-toggle class="ai-chat-btn" aria-label="Toggle AI Companion">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-message-circle"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg>
+    </button>
+
+    <!-- CHATBOT -->
+    <div class="ai-chat-panel" data-chat-panel>
+        <div class="ai-chat-header">
             <div>
-              <strong>Dr. Maya Chen</strong>
-              <p class="section-subtitle">Cardiology partner</p>
+                <h3>CareLens Assistant</h3>
+                <p>Your AI healthcare companion</p>
             </div>
-            <span>★★★★★</span>
-          </div>
+            <div class="live-dot"></div>
         </div>
-        <div class="card">
-          <p class="lead">"The dashboard is elegant, the insights are crisp, and the UX feels premium. A real health-tech winner."</p>
-          <div class="flex-between" style="margin-top: 24px;">
-            <div>
-              <strong>Alex Rivera</strong>
-              <p class="section-subtitle">Clinical director</p>
+        <div class="ai-chat-messages">
+            <div class="ai-bubble assistant">
+                Hello 👋 How can I help you today?
             </div>
-            <span>★★★★★</span>
-          </div>
-        </div>
-        <div class="card">
-          <p class="lead">"From reminders to emergency support, CareLens delivers a polished experience patients trust."</p>
-          <div class="flex-between" style="margin-top: 24px;">
-            <div>
-              <strong>Priya Joshi</strong>
-              <p class="section-subtitle">Digital health lead</p>
+            <div class="ai-bubble assistant">
+                I can help with: disease detection, reminders, emergency support, and health awareness.
             </div>
-            <span>★★★★★</span>
-          </div>
         </div>
-      </div>
-    </section>
-  </main>
-
-  <footer class="footer">
-    <div class="container">
-      <p>CareLens AI © 2026</p>
-      <div class="footer-links">
-        <a href="#">Privacy</a>
-        <a href="#">Terms</a>
-        <a href="#">Support</a>
-      </div>
-      <p>Built for futuristic AI healthcare teams.</p>
+        <div class="ai-chat-input">
+            <input type="text" placeholder="Type a message..." />
+            <button aria-label="Send message">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-send"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></svg>
+            </button>
+        </div>
     </div>
-  </footer>
 
-  <div class="glass-card" data-chat-panel style="position: fixed; right: 24px; bottom: 24px; width: 320px; max-width: calc(100vw - 32px); opacity: 0; visibility: hidden; transform: translateY(20px); transition: all 0.35s ease;">
-    <div class="card" style="padding: 22px 22px 16px;">
-      <div class="flex-between">
-        <div>
-          <strong>CareLens Assistant</strong>
-          <p class="section-subtitle">Your AI healthcare companion</p>
-        </div>
-        <button data-chat-toggle class="btn secondary-btn" style="padding: 10px 14px; font-size: 0.9rem;">Close</button>
-      </div>
-      <div style="margin-top: 18px; display: grid; gap: 14px;">
-        <div class="card" style="padding: 14px; border-radius: 22px; background: rgba(255,255,255,0.06);">Hi there! Ask me about risk checks, health tips, or medical records.</div>
-        <div class="card" style="padding: 14px; border-radius: 22px; background: rgba(56, 189, 248, 0.08);">I can review symptoms, recommend next steps, and connect you to emergency support.</div>
-      </div>
-    </div>
-  </div>
+    <!-- SCRIPTS -->
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script src="js/app.js"></script>
 
-  <button data-chat-toggle class="btn" style="position: fixed; right: 24px; bottom: 24px; border-radius: 50%; width: 60px; height: 60px; padding: 0; justify-content: center; box-shadow: 0 24px 40px rgba(0, 212, 255, 0.32);">
-    <span data-lucide="message-circle"></span>
-  </button>
-
-  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-  <script src="https://unpkg.com/lucide@latest/dist/lucide.min.js"></script>
-  <script src="js/app.js"></script>
 </body>
 </html>

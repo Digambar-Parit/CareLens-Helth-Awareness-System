@@ -1,36 +1,72 @@
+/* ====================================================
+   CareLens AI - Emergency Response Styles
+   ==================================================== */
+
 .emergency-hero {
   margin-top: 32px;
 }
 
 .hero-panel {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1.1fr 0.9fr;
   gap: 28px;
   padding: 32px;
+  align-items: center;
 }
 
 .emergency-button {
-  padding: 18px 26px;
-  border-radius: 999px;
-  font-size: 1rem;
-  background: linear-gradient(135deg, #ff4d6d, #ff8d4b);
+  padding: 18px 30px;
+  border-radius: var(--radius-full);
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--bg-white);
+  background: linear-gradient(135deg, var(--danger), #ff8d4b);
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 8px 24px rgba(239, 68, 68, 0.25);
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  transition: var(--transition);
+  margin-top: 20px;
+}
+
+.emergency-button:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 32px rgba(239, 68, 68, 0.4);
+}
+
+.emergency-button:disabled {
+  background: var(--text-soft);
+  box-shadow: none;
+  cursor: not-allowed;
 }
 
 .alert-panel {
   display: grid;
   gap: 12px;
   padding: 24px;
-  border-radius: 24px;
-  background: rgba(255, 255, 255, 0.06);
+  border-radius: var(--radius-lg);
+  background: rgba(239, 68, 68, 0.05);
+  border: 1px solid rgba(239, 68, 68, 0.15);
+  transition: var(--transition);
 }
 
 .alert-text {
-  font-size: 1.2rem;
-  font-weight: 700;
+  font-size: 1.25rem;
+  font-weight: 750;
+  color: var(--danger);
 }
 
 .emergency-card {
   padding: 26px;
+  transition: var(--transition);
+}
+
+.emergency-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(239, 68, 68, 0.2);
+  box-shadow: var(--shadow-md);
 }
 
 .contacts-panel,
@@ -45,18 +81,36 @@
   padding: 0;
   margin: 18px 0 0;
   display: grid;
-  gap: 14px;
+  gap: 16px;
 }
 
-.contact-list li,
+.contact-list li {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 12px 16px;
+  border-radius: var(--radius-sm);
+  background: var(--bg-white);
+  border: 1px solid var(--border-color);
+}
+
+.contact-list li strong {
+  color: var(--text-main);
+}
+
 .aid-list li {
-  color: var(--muted);
+  padding: 12px 16px;
+  border-radius: var(--radius-sm);
+  background: var(--bg-white);
+  border: 1px solid var(--border-color);
+  color: var(--text-muted);
 }
 
 .map-placeholder {
   min-height: 320px;
-  border-radius: 28px;
-  background: rgba(255, 255, 255, 0.05);
+  border-radius: var(--radius-lg);
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
   display: grid;
   place-items: center;
   text-align: center;
@@ -70,11 +124,26 @@
   display: grid;
   place-items: center;
   border-radius: 50%;
-  background: rgba(0, 212, 255, 0.15);
+  background: rgba(239, 68, 68, 0.1);
+  color: var(--danger);
+  animation: pulse-red 2s infinite;
+}
+
+@keyframes pulse-red {
+  0% {
+    box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.4);
+  }
+  70% {
+    box-shadow: 0 0 0 12px rgba(239, 68, 68, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(239, 68, 68, 0);
+  }
 }
 
 @media (max-width: 960px) {
   .hero-panel {
     grid-template-columns: 1fr;
+    gap: 24px;
   }
 }
