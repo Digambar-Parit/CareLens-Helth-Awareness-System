@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CareLens Detection</title>
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/detection.css" />
+</head>
+<body>
+  <nav>
+    <div class="navbar container">
+      <a href="index.html" class="logo btn secondary-btn">CareLens</a>
+      <div class="nav-links">
+        <a href="dashboard.html">Dashboard</a>
+        <a href="detection.html">Detection</a>
+        <a href="reminders.html">Reminders</a>
+        <a href="reports.html">Reports</a>
+      </div>
+      <div class="flex gap-3">
+        <a href="history.html" class="btn secondary-btn">History</a>
+        <a href="emergency.html" class="btn">SOS</a>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <section class="container" data-aos="fade-up">
+      <div class="flex-between" style="gap: 24px; flex-wrap: wrap;">
+        <div>
+          <p class="section-subtitle">Symptom assessment</p>
+          <h1 class="page-heading">AI disease detection toolkit</h1>
+          <p class="lead">Select symptoms and let our health AI analyze risk, severity, and treatment readiness in seconds.</p>
+        </div>
+        <div class="chip-panel glass-card">
+          <p class="section-subtitle">Severity meter</p>
+          <div class="severity-meter">
+            <span style="width: 64%;"></span>
+          </div>
+          <strong>Moderate risk detected</strong>
+        </div>
+      </div>
+
+      <div class="glass-card detection-grid" data-aos="fade-up" data-aos-delay="100">
+        <div>
+          <h3>Choose symptoms</h3>
+          <div class="chips">
+            <button class="chip-btn active">Fatigue</button>
+            <button class="chip-btn">Fever</button>
+            <button class="chip-btn">Cough</button>
+            <button class="chip-btn">Headache</button>
+            <button class="chip-btn">Chest pain</button>
+            <button class="chip-btn">Shortness</button>
+          </div>
+          <div class="flex gap-16" style="margin-top: 24px; flex-wrap: wrap;">
+            <button class="btn" id="analyzeButton">Analyze now</button>
+            <button class="btn secondary-btn" id="resetButton">Reset</button>
+          </div>
+
+          <div class="chatbot-input-container" style="margin-top: 28px;">
+            <div class="chatbot-input-wrapper">
+              <input 
+                type="text" 
+                id="symptomInput" 
+                class="chatbot-input" 
+                placeholder="Tell me about your symptoms..." 
+              />
+              <button class="chatbot-submit-btn" id="submitSymptomsBtn">
+                <span data-lucide="send"></span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="analysis-panel glass-card">
+          <div class="widget-header flex-between">
+            <h3>AI analysis</h3>
+            <span class="chip">Realtime</span>
+          </div>
+          <div class="analysis-content">
+            <p class="lead">CareLens has identified a moderate likelihood of respiratory stress with focus on early intervention.</p>
+            <ul>
+              <li>Recommended clinical review in 2 days</li>
+              <li>Hydration and breathing exercises</li>
+              <li>Upload lab reports for deeper scan</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="container" data-aos="fade-up">
+      <div class="grid grid-2" style="gap: 28px;">
+        <div class="glass-card camera-card" data-aos="fade-right">
+          <h3>Camera-assisted detection</h3>
+          <div class="camera-sim">
+            <div class="camera-frame">
+              <span data-lucide="camera"></span>
+              <p>Live scan ready</p>
+            </div>
+          </div>
+          <p class="section-subtitle">Use your device camera for vision-based symptom detection and posture assessment.</p>
+        </div>
+
+        <div class="glass-card upload-card" data-aos="fade-left">
+          <h3>Upload medical report</h3>
+          <p class="section-subtitle">Drag & drop PDF, image, or lab result for AI extraction and diagnostic review.</p>
+          <div class="upload-zone" id="uploadZone">
+            <span data-lucide="upload-cloud"></span>
+            <p>Drop files here or browse</p>
+          </div>
+          <div class="upload-preview" id="uploadPreview">No file uploaded</div>
+          <button class="btn secondary-btn" id="recheckButton" style="margin-top: 18px;">Recheck data</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="container" data-aos="fade-up">
+      <div class="glass-card typing-card">
+        <div class="widget-header">
+          <h3>AI assistant transcript</h3>
+        </div>
+        <div class="chat-log">
+          <div class="bubble assistant">Hi Amara, I’m reviewing your symptom inputs now.</div>
+          <div class="bubble user">I’m feeling tightness in my chest and headache.</div>
+          <div class="bubble assistant typing"><span></span><span></span><span></span></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>CareLens Detection • AI-assisted health triage.</p>
+    </div>
+  </footer>
+
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script src="https://unpkg.com/lucide@latest/dist/lucide.min.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/detection.js"></script>
+</body>
+</html>

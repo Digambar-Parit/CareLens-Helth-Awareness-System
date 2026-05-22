@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CareLens Reminders</title>
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/reminders.css" />
+</head>
+<body>
+  <nav>
+    <div class="navbar container">
+      <a href="index.html" class="logo btn secondary-btn">CareLens</a>
+      <div class="nav-links">
+        <a href="dashboard.html">Dashboard</a>
+        <a href="detection.html">Detection</a>
+        <a href="reminders.html">Reminders</a>
+        <a href="reports.html">Reports</a>
+      </div>
+      <div class="flex gap-3">
+        <a href="history.html" class="btn secondary-btn">History</a>
+        <a href="emergency.html" class="btn">SOS</a>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <section class="container" data-aos="fade-up">
+      <div class="section-title">Medicine Reminders</div>
+      <p class="lead">Stay ahead of your medication schedule with alerts, medication cards, and intelligent reminders.</p>
+    </section>
+
+    <section class="container" data-aos="fade-up" style="margin-top: 32px;">
+      <div class="grid grid-2" style="gap: 26px;">
+        <div class="glass-card reminder-panel">
+          <div class="widget-header flex-between">
+            <h3>Today’s medicine plan</h3>
+            <button class="btn">Add reminder</button>
+          </div>
+          <div class="medicine-cards">
+            <div class="medicine-card">
+              <div>
+                <h4>Vitamin D</h4>
+                <p>8:00 AM • Daily</p>
+              </div>
+              <span class="chip">Done</span>
+            </div>
+            <div class="medicine-card">
+              <div>
+                <h4>Metformin</h4>
+                <p>12:30 PM • With food</p>
+              </div>
+              <span class="chip">Pending</span>
+            </div>
+            <div class="medicine-card">
+              <div>
+                <h4>Probiotic</h4>
+                <p>7:00 PM • After dinner</p>
+              </div>
+              <span class="chip secondary-btn">Scheduled</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="glass-card timeline-panel" data-aos="fade-left">
+          <div class="widget-header flex-between">
+            <h3>Reminder timeline</h3>
+            <span class="chip">Today</span>
+          </div>
+          <div class="timeline-item">
+            <strong>08:00</strong>
+            <p>Morning dose + hydration reminder.</p>
+          </div>
+          <div class="timeline-item">
+            <strong>12:30</strong>
+            <p>Medication alert and meal tracker.</p>
+          </div>
+          <div class="timeline-item">
+            <strong>19:00</strong>
+            <p>Evening supplement check.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="container" data-aos="fade-up" style="margin-top: 32px;">
+      <div class="glass-card schedule-panel">
+        <div class="widget-header flex-between">
+          <h3>Daily schedule</h3>
+          <span class="chip">Sync enabled</span>
+        </div>
+        <div class="schedule-grid">
+          <div class="schedule-card">
+            <p>Morning</p>
+            <strong>Vitamin D</strong>
+          </div>
+          <div class="schedule-card">
+            <p>Midday</p>
+            <strong>Medication</strong>
+          </div>
+          <div class="schedule-card">
+            <p>Evening</p>
+            <strong>Supplement</strong>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="glass-card notification-card" data-aos="fade-up" style="margin: 32px auto; max-width: 1000px;">
+      <div class="widget-header">
+        <h3>Smart notification center</h3>
+      </div>
+      <p class="section-subtitle">Never miss a dose — CareLens sends prioritized reminders, acknowledgement tracking, and health tips.</p>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>CareLens Medication Planner • Keep your schedule seamless.</p>
+    </div>
+  </footer>
+
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script src="https://unpkg.com/lucide@latest/dist/lucide.min.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/reminders.js"></script>
+</body>
+</html>

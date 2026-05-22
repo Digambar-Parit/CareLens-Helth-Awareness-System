@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CareLens Nearby</title>
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/nearby.css" />
+</head>
+<body>
+  <nav>
+    <div class="navbar container">
+      <a href="index.html" class="logo btn secondary-btn">CareLens</a>
+      <div class="nav-links">
+        <a href="dashboard.html">Dashboard</a>
+        <a href="detection.html">Detection</a>
+        <a href="reminders.html">Reminders</a>
+        <a href="reports.html">Reports</a>
+      </div>
+      <div class="flex gap-3">
+        <a href="history.html" class="btn secondary-btn">History</a>
+        <a href="emergency.html" class="btn">SOS</a>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <section class="container" data-aos="fade-up">
+      <div class="section-title">Nearby care locations</div>
+      <p class="lead">Find hospitals, clinics, and pharmacies near you with ratings, distance, and quick contact actions.</p>
+    </section>
+
+    <section class="container" data-aos="fade-up" style="margin-top: 32px;">
+      <div class="grid grid-3" style="gap: 24px;">
+        <div class="glass-card place-card">
+          <h4>Starlight Hospital</h4>
+          <p>Distance 1.8 km • ★★★★★</p>
+          <span class="chip">Emergency</span>
+        </div>
+        <div class="glass-card place-card">
+          <h4>Oasis Clinic</h4>
+          <p>Distance 2.7 km • ★★★★☆</p>
+          <span class="chip secondary-btn">Clinic</span>
+        </div>
+        <div class="glass-card place-card">
+          <h4>Glow Pharmacy</h4>
+          <p>Distance 1.2 km • ★★★★★</p>
+          <span class="chip">Pharmacy</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="container" data-aos="fade-up" style="margin-top: 32px;">
+      <div class="glass-card map-layout">
+        <h3>Map overview</h3>
+        <div class="map-card">
+          <span data-lucide="map"></span>
+          <p>Interactive route preview to nearby urgent care locations.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="container" data-aos="fade-up" style="margin-top: 32px;">
+      <div class="grid grid-2" style="gap: 24px;">
+        <div class="glass-card ratings-card">
+          <h4>Top rated facilities</h4>
+          <ul>
+            <li>Pulse Care Center • 4.9 ★</li>
+            <li>Nova Health Lab • 4.8 ★</li>
+            <li>CarePoint Clinic • 4.7 ★</li>
+          </ul>
+        </div>
+        <div class="glass-card distance-card">
+          <h4>Distance quick view</h4>
+          <div class="distance-row"><strong>1.1 km</strong><span>Glow Pharmacy</span></div>
+          <div class="distance-row"><strong>1.8 km</strong><span>Starlight Hospital</span></div>
+          <div class="distance-row"><strong>2.7 km</strong><span>Oasis Clinic</span></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>CareLens Nearby • Precision local healthcare guidance.</p>
+    </div>
+  </footer>
+
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script src="https://unpkg.com/lucide@latest/dist/lucide.min.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/nearby.js"></script>
+</body>
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CareLens History</title>
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/history.css" />
+</head>
+<body>
+  <nav>
+    <div class="navbar container">
+      <a href="index.html" class="logo btn secondary-btn">CareLens</a>
+      <div class="nav-links">
+        <a href="dashboard.html">Dashboard</a>
+        <a href="detection.html">Detection</a>
+        <a href="reminders.html">Reminders</a>
+        <a href="reports.html">Reports</a>
+      </div>
+      <div class="flex gap-3">
+        <a href="nearby.html" class="btn secondary-btn">Nearby</a>
+        <a href="emergency.html" class="btn">SOS</a>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <section class="container" data-aos="fade-up">
+      <div class="section-title">Patient history</div>
+      <p class="lead">Review medical milestones, prescription history, and downloadable reports curated for your care journey.</p>
+    </section>
+
+    <section class="container" data-aos="fade-up" style="margin-top: 32px;">
+      <div class="search-panel glass-card">
+        <input type="search" placeholder="Search reports or prescriptions" />
+        <button class="btn secondary-btn">Filter</button>
+      </div>
+      <div class="timeline-panel glass-card" style="margin-top: 24px;">
+        <div class="widget-header">
+          <h3>Medical history timeline</h3>
+        </div>
+        <div class="history-list">
+          <div class="history-item">
+            <strong>Jan 2026</strong>
+            <p>Routine checkup + cholesterol review.</p>
+          </div>
+          <div class="history-item">
+            <strong>Nov 2025</strong>
+            <p>Physical therapy and sleep assessment.</p>
+          </div>
+          <div class="history-item">
+            <strong>Aug 2025</strong>
+            <p>Prescription renewal for sustained care.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="container" data-aos="fade-up" style="margin-top: 32px;">
+      <div class="grid grid-3" style="gap: 22px;">
+        <div class="glass-card report-card">
+          <h4>Report history</h4>
+          <p>50+ lab reports</p>
+          <button class="btn secondary-btn">Download</button>
+        </div>
+        <div class="glass-card prescription-card">
+          <h4>Prescriptions</h4>
+          <p>Medication renewal, dosage logs, refill reminders.</p>
+          <button class="btn secondary-btn">View list</button>
+        </div>
+        <div class="glass-card analytics-card">
+          <h4>Health analytics</h4>
+          <p>Visual memory of your wellness improvements.</p>
+          <button class="btn secondary-btn">Launch</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>CareLens History • Your health records in one intelligent timeline.</p>
+    </div>
+  </footer>
+
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script src="https://unpkg.com/lucide@latest/dist/lucide.min.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/history.js"></script>
+</body>
+</html>

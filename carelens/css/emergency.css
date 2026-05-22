@@ -1,0 +1,80 @@
+.emergency-hero {
+  margin-top: 32px;
+}
+
+.hero-panel {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px;
+  padding: 32px;
+}
+
+.emergency-button {
+  padding: 18px 26px;
+  border-radius: 999px;
+  font-size: 1rem;
+  background: linear-gradient(135deg, #ff4d6d, #ff8d4b);
+}
+
+.alert-panel {
+  display: grid;
+  gap: 12px;
+  padding: 24px;
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.alert-text {
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.emergency-card {
+  padding: 26px;
+}
+
+.contacts-panel,
+.guide-panel,
+.map-panel {
+  padding: 28px;
+}
+
+.contact-list,
+.aid-list {
+  list-style: none;
+  padding: 0;
+  margin: 18px 0 0;
+  display: grid;
+  gap: 14px;
+}
+
+.contact-list li,
+.aid-list li {
+  color: var(--muted);
+}
+
+.map-placeholder {
+  min-height: 320px;
+  border-radius: 28px;
+  background: rgba(255, 255, 255, 0.05);
+  display: grid;
+  place-items: center;
+  text-align: center;
+  padding: 30px;
+  gap: 18px;
+}
+
+.map-placeholder span {
+  width: 64px;
+  height: 64px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: rgba(0, 212, 255, 0.15);
+}
+
+@media (max-width: 960px) {
+  .hero-panel {
+    grid-template-columns: 1fr;
+  }
+}

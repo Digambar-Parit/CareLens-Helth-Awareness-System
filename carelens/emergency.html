@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CareLens Emergency</title>
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/emergency.css" />
+</head>
+<body>
+  <nav>
+    <div class="navbar container">
+      <a href="index.html" class="logo btn secondary-btn">CareLens</a>
+      <div class="nav-links">
+        <a href="dashboard.html">Dashboard</a>
+        <a href="detection.html">Detection</a>
+        <a href="reminders.html">Reminders</a>
+        <a href="reports.html">Reports</a>
+      </div>
+      <div class="flex gap-3">
+        <a href="nearby.html" class="btn secondary-btn">Nearby</a>
+        <a href="emergency.html" class="btn">SOS</a>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <section class="container emergency-hero" data-aos="fade-up">
+      <div class="hero-panel glass-card">
+        <div>
+          <p class="section-subtitle">Emergency response</p>
+          <h1 class="page-heading">Immediate care in one tap</h1>
+          <p class="lead">Activate SOS, locate nearby hospitals, and access first-aid guidance instantly.</p>
+          <button class="btn emergency-button"><span data-lucide="zap"></span> Activate SOS</button>
+        </div>
+        <div class="alert-panel">
+          <div class="alert-text">Emergency readiness active</div>
+          <div class="alert-meta">Nearest hospital: 2.1 km • Ambulance ETA: 4 min</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="container" data-aos="fade-up">
+      <div class="section-title">Nearby emergency support</div>
+      <div class="grid grid-3" style="margin-top: 24px;">
+        <div class="glass-card emergency-card">
+          <h4>Starlight Hospital</h4>
+          <p>Distance 1.8 km • Open 24/7</p>
+          <span class="chip">Clinic</span>
+        </div>
+        <div class="glass-card emergency-card">
+          <h4>Pulse Care Center</h4>
+          <p>Distance 2.4 km • Ambulance available</p>
+          <span class="chip">Hospital</span>
+        </div>
+        <div class="glass-card emergency-card">
+          <h4>First Aid Pharmacy</h4>
+          <p>Distance 1.1 km • Medicine delivery</p>
+          <span class="chip secondary-btn">Pharmacy</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="container" data-aos="fade-up">
+      <div class="grid grid-2" style="gap: 28px;">
+        <div class="glass-card contacts-panel">
+          <div class="widget-header flex-between">
+            <h3>Emergency contacts</h3>
+            <span class="chip">Trusted</span>
+          </div>
+          <ul class="contact-list">
+            <li><strong>911</strong> • Emergency services</li>
+            <li><strong>Dr. Nia Patel</strong> • Primary physician</li>
+            <li><strong>Mom</strong> • Family contact</li>
+          </ul>
+        </div>
+        <div class="glass-card guide-panel">
+          <div class="widget-header flex-between">
+            <h3>First aid guide</h3>
+            <span class="chip secondary-btn">Quick tips</span>
+          </div>
+          <ol class="aid-list">
+            <li>Call emergency services immediately.</li>
+            <li>Keep airway clear and check breathing.</li>
+            <li>Apply pressure to major bleeding points.</li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <section class="container" data-aos="fade-up">
+      <div class="glass-card map-panel">
+        <h3>Location & route</h3>
+        <div class="map-placeholder">
+          <span data-lucide="map-pin"></span>
+          <p>Live positioning within the CareLens emergency map.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>CareLens Emergency • Designed for urgent health response.</p>
+    </div>
+  </footer>
+
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script src="https://unpkg.com/lucide@latest/dist/lucide.min.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/emergency.js"></script>
+</body>
+</html>

@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CareLens AI Dashboard</title>
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/dashboard.css" />
+</head>
+<body>
+  <nav>
+    <div class="navbar container">
+      <a href="index.html" class="logo btn secondary-btn">CareLens</a>
+      <div class="nav-links">
+        <a href="dashboard.html">Dashboard</a>
+        <a href="detection.html">Detection</a>
+        <a href="reminders.html">Reminders</a>
+        <a href="reports.html">Reports</a>
+      </div>
+      <div class="flex gap-3">
+        <a href="history.html" class="btn secondary-btn">History</a>
+        <a href="emergency.html" class="btn">SOS</a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="dashboard-shell container">
+    <aside class="dashboard-sidebar" data-aos="fade-right">
+      <div class="glass-card sidebar-card">
+        <div class="profile-block">
+          <div class="avatar">A</div>
+          <div>
+            <h3>Amara Reid</h3>
+            <p>Patient profile</p>
+          </div>
+        </div>
+        <nav class="sidebar-nav">
+          <a href="#overview" class="active">Overview</a>
+          <a href="#insights">Insights</a>
+          <a href="#hydration">Hydration</a>
+          <a href="#sleep">Sleep</a>
+          <a href="#activity">Activity</a>
+        </nav>
+      </div>
+    </aside>
+
+    <section class="dashboard-main">
+      <div class="dashboard-header flex-between" data-aos="fade-up">
+        <div>
+          <p class="section-subtitle">Welcome back, Amara</p>
+          <h1 class="page-heading">Today’s health summary</h1>
+        </div>
+        <button class="btn secondary-btn">Export report</button>
+      </div>
+
+      <div class="grid grid-3 metrics-grid" data-aos="fade-up" data-aos-delay="80">
+        <div class="glass-card metric-card">
+          <p>Overall health score</p>
+          <h2>86</h2>
+          <p class="section-subtitle">Stable performance</p>
+        </div>
+        <div class="glass-card metric-card">
+          <p>Stress level</p>
+          <h2>Low</h2>
+          <p class="section-subtitle">Mindfulness active</p>
+        </div>
+        <div class="glass-card metric-card">
+          <p>Recovery index</p>
+          <h2>72%</h2>
+          <p class="section-subtitle">Improving daily</p>
+        </div>
+      </div>
+
+      <div class="grid grid-2" style="gap: 28px; margin-top: 32px;">
+        <div class="glass-card dashboard-widget" data-aos="fade-right" id="overview">
+          <div class="widget-header flex-between">
+            <h3>AI insights</h3>
+            <span class="chip">Risk prediction</span>
+          </div>
+          <p class="section-subtitle">Your preventive assistant suggests a focus on improved sleep and hydration for optimal immunity.</p>
+          <div class="insight-list">
+            <div class="insight-item">
+              <div>
+                <p>Potential fatigue risk</p>
+                <strong>12% increase</strong>
+              </div>
+            </div>
+            <div class="insight-item">
+              <div>
+                <p>Daily hydration</p>
+                <strong>Recommended +500ml</strong>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="glass-card dashboard-widget" data-aos="fade-left">
+          <div class="widget-header flex-between">
+            <h3>Recent health activity</h3>
+            <span class="chip secondary-btn">Live</span>
+          </div>
+          <ul class="activity-list">
+            <li>AI detected early heart variability trend.</li>
+            <li>Blood oxygen report synced.</li>
+            <li>Medication reminder confirmed.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="grid grid-2" style="gap: 28px; margin-top: 32px;">
+        <div class="glass-card chart-card" data-aos="fade-up" id="hydration">
+          <div class="widget-header">
+            <h3>Hydration tracker</h3>
+          </div>
+          <canvas id="hydrationChart" height="220"></canvas>
+        </div>
+        <div class="glass-card chart-card" data-aos="fade-up" id="sleep">
+          <div class="widget-header">
+            <h3>Sleep analytics</h3>
+          </div>
+          <canvas id="sleepChart" height="220"></canvas>
+        </div>
+      </div>
+
+      <div class="grid grid-2" style="gap: 28px; margin-top: 32px;">
+        <div class="glass-card" data-aos="fade-right">
+          <div class="widget-header">
+            <h3>Stress meter</h3>
+          </div>
+          <div class="stress-meter">
+            <span class="meter-bar" style="width: 34%;"></span>
+          </div>
+          <p class="section-subtitle">Current stress level is low with balanced breathing activity.</p>
+        </div>
+        <div class="glass-card" data-aos="fade-left" id="activity">
+          <div class="widget-header">
+            <h3>Live reminders</h3>
+          </div>
+          <div class="reminder-summary">
+            <div><strong>09:00</strong> Medication intake</div>
+            <div><strong>12:30</strong> Hydration boost</div>
+            <div><strong>18:00</strong> Evening walk</div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>CareLens AI Dashboard • Powered by predictive health intelligence.</p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script src="https://unpkg.com/lucide@latest/dist/lucide.min.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/dashboard.js"></script>
+</body>
+</html>
