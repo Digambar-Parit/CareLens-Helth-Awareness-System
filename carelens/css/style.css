@@ -970,6 +970,7 @@ body.dark-theme .settings-sidebar {
   font-size: 1.25rem;
   background: linear-gradient(135deg, var(--primary), var(--secondary));
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 

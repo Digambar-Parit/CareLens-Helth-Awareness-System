@@ -196,6 +196,48 @@ document.addEventListener('DOMContentLoaded', function () {
       floatBtn.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-settings"><path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.1a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"/><circle cx="12" cy="12" r="3"/></svg>`;
       document.body.appendChild(floatBtn);
     }
+
+    // Inject language switcher in mobile menu links
+    const mobileMenuLinks = document.querySelector('.mobile-menu-links');
+    if (mobileMenuLinks && !document.querySelector('.mobile-menu-lang-section')) {
+      const langSection = document.createElement('div');
+      langSection.className = 'mobile-menu-lang-section';
+      langSection.style.cssText = 'margin-top: 24px; padding-top: 18px; border-top: 1px solid rgba(255,255,255,0.1); width: 100%; text-align: left;';
+      langSection.innerHTML = `
+        <p style="font-size: 0.85rem; opacity: 0.8; margin-bottom: 8px; color: var(--text-soft); font-weight: 600;">Choose Language / भाषा निवडा</p>
+        <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+          <button class="lang-btn-mobile lang-btn-en" style="padding: 6px 12px; font-size: 0.8rem; border-radius: var(--radius-sm); border: 1px solid var(--border-color); background: none; color: var(--text-main); cursor: pointer;">EN</button>
+          <button class="lang-btn-mobile lang-btn-hi" style="padding: 6px 12px; font-size: 0.8rem; border-radius: var(--radius-sm); border: 1px solid var(--border-color); background: none; color: var(--text-main); cursor: pointer;">हिन्दी</button>
+          <button class="lang-btn-mobile lang-btn-mr" style="padding: 6px 12px; font-size: 0.8rem; border-radius: var(--radius-sm); border: 1px solid var(--border-color); background: none; color: var(--text-main); cursor: pointer;">मराठी</button>
+        </div>
+      `;
+      mobileMenuLinks.appendChild(langSection);
+
+      langSection.querySelector('.lang-btn-en').addEventListener('click', (e) => { e.preventDefault(); applyTranslations('en'); });
+      langSection.querySelector('.lang-btn-hi').addEventListener('click', (e) => { e.preventDefault(); applyTranslations('hi'); });
+      langSection.querySelector('.lang-btn-mr').addEventListener('click', (e) => { e.preventDefault(); applyTranslations('mr'); });
+    }
+
+    // Inject language switcher in sidebar nav (Dashboard sidebar)
+    const sidebarNav = document.querySelector('.sidebar-nav');
+    if (sidebarNav && !document.querySelector('.sidebar-lang-section')) {
+      const langSection = document.createElement('div');
+      langSection.className = 'sidebar-lang-section';
+      langSection.style.cssText = 'margin-top: 32px; padding-top: 16px; border-top: 1px solid var(--border-color); text-align: left;';
+      langSection.innerHTML = `
+        <p style="font-size: 0.8rem; color: var(--text-soft); margin-bottom: 10px; font-weight: 600;">Language / भाषा</p>
+        <div style="display: flex; gap: 6px; flex-wrap: wrap;">
+          <button class="lang-btn-sidebar lang-btn-en" style="padding: 6px 10px; font-size: 0.75rem; border-radius: var(--radius-sm); border: 1px solid var(--border-color); background: none; color: var(--text-main); cursor: pointer;">EN</button>
+          <button class="lang-btn-sidebar lang-btn-hi" style="padding: 6px 10px; font-size: 0.75rem; border-radius: var(--radius-sm); border: 1px solid var(--border-color); background: none; color: var(--text-main); cursor: pointer;">हिन्दी</button>
+          <button class="lang-btn-sidebar lang-btn-mr" style="padding: 6px 10px; font-size: 0.75rem; border-radius: var(--radius-sm); border: 1px solid var(--border-color); background: none; color: var(--text-main); cursor: pointer;">मराठी</button>
+        </div>
+      `;
+      sidebarNav.appendChild(langSection);
+
+      langSection.querySelector('.lang-btn-en').addEventListener('click', (e) => { e.preventDefault(); applyTranslations('en'); });
+      langSection.querySelector('.lang-btn-hi').addEventListener('click', (e) => { e.preventDefault(); applyTranslations('hi'); });
+      langSection.querySelector('.lang-btn-mr').addEventListener('click', (e) => { e.preventDefault(); applyTranslations('mr'); });
+    }
   };
 
   buildSettingsSidebar();
@@ -579,6 +621,36 @@ document.addEventListener('DOMContentLoaded', function () {
     if (lang === 'hi') document.getElementById('langHiBtn')?.classList.add('active');
     if (lang === 'mr') document.getElementById('langMrBtn')?.classList.add('active');
 
+    // Update mobile menu language button active classes
+    document.querySelectorAll('.lang-btn-mobile').forEach(btn => {
+      btn.classList.remove('active');
+      btn.style.background = 'none';
+      btn.style.borderColor = 'var(--border-color)';
+      btn.style.color = 'var(--text-main)';
+    });
+    const activeMobBtn = document.querySelector(`.lang-btn-mobile.lang-btn-${lang}`);
+    if (activeMobBtn) {
+      activeMobBtn.classList.add('active');
+      activeMobBtn.style.background = 'linear-gradient(135deg, var(--primary), var(--secondary))';
+      activeMobBtn.style.borderColor = 'transparent';
+      activeMobBtn.style.color = 'white';
+    }
+
+    // Update sidebar language button active classes
+    document.querySelectorAll('.lang-btn-sidebar').forEach(btn => {
+      btn.classList.remove('active');
+      btn.style.background = 'none';
+      btn.style.borderColor = 'var(--border-color)';
+      btn.style.color = 'var(--text-main)';
+    });
+    const activeSideBtn = document.querySelector(`.lang-btn-sidebar.lang-btn-${lang}`);
+    if (activeSideBtn) {
+      activeSideBtn.classList.add('active');
+      activeSideBtn.style.background = 'linear-gradient(135deg, var(--primary), var(--secondary))';
+      activeSideBtn.style.borderColor = 'transparent';
+      activeSideBtn.style.color = 'white';
+    }
+
     // Advanced recursive translator to cover ALL page contents
     const translateNode = (node) => {
       if (node.nodeType === Node.TEXT_NODE) {
@@ -598,8 +670,14 @@ document.addEventListener('DOMContentLoaded', function () {
           }
         }
       } else if (node.nodeType === Node.ELEMENT_NODE) {
-        // Skip translating elements inside the settings panel itself to prevent loop issues
-        if (node.id === 'settingsSidebar' || node.id === 'settingsToggleBtn' || node.id === 'mobileSettingsToggle' || node.id === 'settingsFloatBtn' || node.tagName === 'SCRIPT' || node.tagName === 'STYLE') {
+        // Skip translating elements inside the settings panel or language switcher sections itself to prevent loop issues
+        if (node.id === 'settingsSidebar' || 
+            node.id === 'settingsToggleBtn' || 
+            node.id === 'mobileSettingsToggle' || 
+            node.id === 'settingsFloatBtn' || 
+            (node.classList && (node.classList.contains('mobile-menu-lang-section') || node.classList.contains('sidebar-lang-section'))) ||
+            node.tagName === 'SCRIPT' || 
+            node.tagName === 'STYLE') {
           return;
         }
 
