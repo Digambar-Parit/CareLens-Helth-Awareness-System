@@ -3,9 +3,9 @@ const router = express.Router();
 const reminderController = require('../controllers/reminderController');
 const auth = require('../middleware/auth');
 
-router.use(auth);
-router.post('/', reminderController.createReminder);
-router.get('/', reminderController.getReminders);
-router.delete('/:id', reminderController.deleteReminder);
+router.get('/', auth, reminderController.getReminders);
+router.post('/', auth, reminderController.createReminder);
+router.patch('/:id', auth, reminderController.updateReminder);
+router.delete('/:id', auth, reminderController.deleteReminder);
 
 module.exports = router;
