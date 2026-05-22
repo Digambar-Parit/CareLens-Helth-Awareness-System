@@ -179,6 +179,10 @@ document.addEventListener('DOMContentLoaded', function () {
       modalChatLog.appendChild(bubble);
       modalChatLog.scrollTop = modalChatLog.scrollHeight;
     }
+
+    if (window.applyTranslations) {
+      window.applyTranslations();
+    }
   }
 
   function showTypingIndicator() {

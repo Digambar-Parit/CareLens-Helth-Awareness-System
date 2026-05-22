@@ -1069,3 +1069,17 @@ body.dark-theme .settings-float-btn {
   background: var(--bg-white);
   color: var(--accent);
 }
+
+/* Dynamic translation and theme buttons in mobile drawer & sidebar */
+.lang-btn-mobile, .theme-btn-mobile, .lang-btn-sidebar, .theme-btn-sidebar {
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.lang-btn-mobile:hover:not(.active), 
+.theme-btn-mobile:hover:not(.active), 
+.lang-btn-sidebar:hover:not(.active), 
+.theme-btn-sidebar:hover:not(.active) {
+  background: rgba(79, 172, 254, 0.08) !important;
+  border-color: var(--primary) !important;
+  transform: translateY(-1px);
+}

@@ -509,6 +509,10 @@ document.addEventListener('DOMContentLoaded', function () {
       chatLog.appendChild(bubble);
       chatLog.scrollTop = chatLog.scrollHeight;
     }
+
+    if (window.applyTranslations) {
+      window.applyTranslations();
+    }
   }
 
   function showTypingIndicator() {

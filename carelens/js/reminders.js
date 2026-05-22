@@ -35,8 +35,10 @@ document.addEventListener('DOMContentLoaded', function () {
 
     chip.style.cursor = 'pointer';
     chip.addEventListener('click', () => {
-      const text = chip.textContent.trim().toLowerCase();
-      if (text === 'pending' || text === 'scheduled') {
+      const text = chip.textContent.trim();
+      const isDone = text === 'Done' || text === 'पूर्ण' || text === 'पूर्ण हुआ';
+      
+      if (!isDone) {
         chip.className = 'chip';
         chip.style.background = 'rgba(34, 197, 94, 0.1)';
         chip.style.borderColor = 'var(--success)';
@@ -48,6 +50,10 @@ document.addEventListener('DOMContentLoaded', function () {
         chip.style.borderColor = '';
         chip.style.color = '';
         chip.textContent = 'Pending';
+      }
+
+      if (window.applyTranslations) {
+        window.applyTranslations();
       }
     });
   }
@@ -82,6 +88,9 @@ document.addEventListener('DOMContentLoaded', function () {
     `;
     
     document.body.appendChild(overlay);
+    if (window.applyTranslations) {
+      window.applyTranslations();
+    }
 
     const nameInput = overlay.querySelector('#medicineName');
     const timeInput = overlay.querySelector('#medicineTime');
@@ -157,6 +166,10 @@ document.addEventListener('DOMContentLoaded', function () {
             }
           }
         });
+      }
+
+      if (window.applyTranslations) {
+        window.applyTranslations();
       }
 
       closeModal();
