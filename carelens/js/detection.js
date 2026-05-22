@@ -24,14 +24,28 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
-  function submitSymptoms() {
+  async function submitSymptoms() {
     const symptoms = symptomInput.value.trim();
-    if (symptoms) {
-      console.log('Symptoms submitted:', symptoms);
-      // Clear the input
+    if (!symptoms) return;
+
+    try {
+      submitSymptomsBtn.textContent = 'Analyzing...';
+      const data = await api.post('/prediction/predict', { symptoms });
+      submitSymptomsBtn.textContent = 'Get analysis';
+
+      if (data.error) {
+        alert(data.error);
+        return;
+      }
+
+      // Display the results (you might want to add a proper UI for this)
+      const resultMsg = `Diagnosis: ${data.diagnosis}\nSeverity: ${data.severity}\n\nTips: ${data.awarenessTips}`;
+      alert(resultMsg);
       symptomInput.value = '';
-      // You can add further processing here, such as sending to a backend
-      alert('Symptoms recorded: ' + symptoms);
+    } catch (err) {
+      console.error(err);
+      alert('Failed to get prediction');
+      submitSymptomsBtn.textContent = 'Get analysis';
     }
   }
 

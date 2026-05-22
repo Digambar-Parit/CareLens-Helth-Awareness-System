@@ -3,9 +3,28 @@ document.addEventListener('DOMContentLoaded', function () {
   const ocrPreview = document.getElementById('ocrPreview');
   const extractedText = document.getElementById('extractedText');
 
-  const simulateExtraction = (name) => {
-    if (ocrPreview) ocrPreview.textContent = `Uploaded file: ${name}`;
-    if (extractedText) extractedText.textContent = `Extracted medical observations from ${name}:\n- Blood pressure 118/76 mmHg\n- Stable heart rate 72 bpm\n- No abnormal markers detected\n- Recommended follow-up in two weeks`;
+  const analyzeReport = async (file) => {
+    if (ocrPreview) ocrPreview.textContent = `Processing file: ${file.name}...`;
+    if (extractedText) extractedText.textContent = 'Analyzing with AI...';
+
+    const formData = new FormData();
+    formData.append('report', file);
+
+    try {
+      const data = await api.post('/reports/analyze', formData, true);
+      if (data.error) {
+        alert(data.error);
+        return;
+      }
+      if (ocrPreview) ocrPreview.textContent = `Extracted text from: ${file.name}`;
+      if (extractedText) {
+        const { analysis } = data;
+        extractedText.textContent = `Summary: ${analysis.summary}\n\nMarkers: ${analysis.markers}\n\nAbnormalities: ${analysis.abnormalities}\n\nSuggestions: ${analysis.suggestions}`;
+      }
+    } catch (err) {
+      console.error(err);
+      alert('Failed to analyze report');
+    }
   };
 
   if (!dropzone) return;
@@ -15,7 +34,7 @@ document.addEventListener('DOMContentLoaded', function () {
     fileInput.type = 'file';
     fileInput.accept = '.pdf,.jpg,.jpeg,.png';
     fileInput.onchange = () => {
-      if (fileInput.files.length) simulateExtraction(fileInput.files[0].name);
+      if (fileInput.files.length) analyzeReport(fileInput.files[0]);
     };
     fileInput.click();
   });
@@ -33,7 +52,7 @@ document.addEventListener('DOMContentLoaded', function () {
     event.preventDefault();
     dropzone.style.borderColor = 'rgba(255,255,255,0.16)';
     if (event.dataTransfer.files.length) {
-      simulateExtraction(event.dataTransfer.files[0].name);
+      analyzeReport(event.dataTransfer.files[0]);
     }
   });
 });
