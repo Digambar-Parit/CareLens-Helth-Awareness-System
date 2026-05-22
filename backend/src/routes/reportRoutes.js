@@ -12,6 +12,6 @@ const storage = multer.diskStorage({
 
 const upload = multer({ storage });
 
-router.post('/analyze', auth, upload.single('report'), reportController.analyzeReport);
+router.post('/analyze-report', auth, upload.single('report'), reportController.analyzeReport);
 
 module.exports = router;

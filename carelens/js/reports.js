@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', function () {
     formData.append('report', file);
 
     try {
-      const data = await api.post('/reports/analyze', formData, true);
+      const data = await api.post('/reports/analyze-report', formData, true);
       if (data.error) {
         alert(data.error);
         return;
